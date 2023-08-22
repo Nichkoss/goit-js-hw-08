@@ -21,6 +21,8 @@ function setValue() {
 
 function onFormSubmit(e) {
     e.preventDefault();
+    const object = localStorage.getItem(key);
+    console.log(JSON.parse(object))
     e.currentTarget.reset();
 
     localStorage.removeItem(key);
@@ -35,8 +37,7 @@ function getStorageValue() {
         input.value = parse.email;
         textArea.value = parse.message;
     }
-    console.log(value, JSON.parse(value))
-    // console.log("blabla")
+    // console.log(value, JSON.parse(value))
 }
 
 getStorageValue();
